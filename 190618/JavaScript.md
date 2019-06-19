@@ -96,3 +96,9 @@ console.log(p);				// log 창에서 확인할 수 있다.
 var cnum = Math.random();
 ```
 
+
+
+## III. CodeMix
+
+- Eclipse MarketPlace 에서 WebClipse 를 다운받을 수 있다.
+- 그러면 자동완성에 도움을 받을 수 있다.
