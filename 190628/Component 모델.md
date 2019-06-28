@@ -107,3 +107,18 @@ else if (cmd.equals("addimpl")) {
 
 - 파일이 등록외었는지 확인하려면
 - Window -> Preferences -> General -> Workspace -> Refresh using native hooks or polling 을 체크!
+
+
+
+- 수정할 시
+- 만약 사용자가 사진을 안 넣었을 때, null 값으로 오류가 날 수 있으므로
+
+```jsp
+<p>
+    <img src="img/${pUpdate.imgname }"><br>
+    <input type="file" name="newimgname">
+    <input type="hidden" name="imgname" value="${pUpdate.imgname }">
+    // 히든을 이용해서 값을 유지할 수 있다.
+</p>
+```
+
