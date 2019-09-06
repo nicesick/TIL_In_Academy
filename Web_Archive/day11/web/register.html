@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+	table, tr {
+		width : 100%;
+	}
+
+	td {
+		width : 33.3%;
+	}
+
+	input {
+		width : 100%;
+	}
+</style>
+<script>
+	var patternNum = /[0-9]/;
+	var patternSpec = /[~!@#$%^&*()_+|<>?:{}]/;
+
+	function checkId(id) {
+		if (id == '' || id == null) {
+			$('#id_span').text('아이디 입력 부탁');
+			return false;
+		}
+
+		else {
+			$('#id_span').text('');
+			return true;
+		}
+	};
+
+	function checkPwdCondition(pwd) {
+		if (checkPwdLength(pwd) && checkPwdNumber(pwd) && checkPwdSpecChar(pwd)) {
+			return true;
+		}
+
+		return false;
+	};
+
+	function checkPwdSpecChar(pwd) {
+		if (!patternSpec.test(pwd)) {
+			$('#pwd_span').text('특수문자 입력 부탁');
+			return false;
+		}
+
+		else {
+			$('#pwd_span').text('');
+			return true;
+		}
+	};
+
+	function checkPwdNumber(pwd) {
+		if (!patternNum.test(pwd)) {
+			$('#pwd_span').text('숫자 입력 부탁');
+			return false;
+		}
+
+		else {
+			$('#pwd_span').text('');
+			return true;
+		}
+	};
+
+	function checkPwdLength(pwd) {
+		if (pwd.length < 6 || pwd.length > 20) {
+			$('#pwd_span').text('6 이상 20 이하 부탁');
+			return false;
+		}
+
+		else {
+			$('#pwd_span').text('');
+			return true;
+		}
+	};
+
+	function checkPassword(pwd) {
+		if (pwd == '' || pwd == null) {
+			$('#pwd_span').text('비밀번호 입력 부탁');
+			return false;
+		}
+
+		else if (!checkPwdCondition(pwd)) {
+			return false;
+		}
+
+		else {
+			$('#pwd_span').text('');
+			return true;
+		}
+	};
+
+	$(document).ready(function(){
+		$('input[name="id"]').keyup(function(){
+			var id = $('input[name="id"]').val();
+			check(id);
+		});
+
+		$('input[name="pwd"]').keyup(function(){
+			var pwd = $('input[name="pwd"]').val();
+			checkPassword(pwd);
+		});
+
+		$('input[value="Register"]').click(function(){
+			var id = $('input[name="id"]').val();
+			var pwd = $('input[name="pwd"]').val();
+
+			if (!checkId(id)) {
+				return;
+			}
+
+			else if (!checkPassword(pwd)) {
+				return;
+			}
+
+			else {
+				$('#register_control').attr({
+					'method' : 'post',
+					'action' : 'register'
+				});
+
+				$('#register_control').submit();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>JiHun's Page - REGISTER</h1>
+
+	<form id="register_control">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						<input type="text" name="id" required="required">
+					</td>
+					<td>
+						<span id="id_span"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						PWD
+					</td>
+					<td>
+						<input type="password" name="pwd" required="required">
+					</td>
+					<td>
+						<span id="pwd_span"></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="Register">
+					</td>
+					<td>
+						<a href="index.html"><input type="button" value="Cancel"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

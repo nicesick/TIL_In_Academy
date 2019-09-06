@@ -1,0 +1,20 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+
+	<script>
+		function c1() {
+			var h1 = document.getElementById('h1').innerHTML;
+			alert(h1);
+
+			document.getElementById('h1').innerHTML = h1 + 'ADD TEXT';
+		};
+	</script>
+</head>
+<body>
+	<h1 id="h1"><a href="#">HEADER</a></h1>
+	ID <input id="id" type="text" name="id"><br>
+	<button onclick="c1();">CLICK1</button>
+</body>
+</html>

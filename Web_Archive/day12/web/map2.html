@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Kakao 지도 시작하기</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b2a7e0e084f426a0d438fa0599527b5e"></script>
+
+	<style>
+		#map {
+			width : 500px;
+			height : 400px;
+		}
+		
+	</style>
+	<script>
+		function parsingData(xml, map) {
+			var lists = $(xml).find('list');
+
+			$(lists).each(function (index, item) {
+				var latitude = $(item).find('la').text();
+				var longitude = $(item).find('lo').text();
+
+				var markerPosition = new kakao.maps.LatLng(latitude, longitude);
+
+				var marker = new kakao.maps.Marker({
+					map : map,
+					position: markerPosition
+				});
+
+				map.setCenter(markerPosition);
+			});
+		};
+
+		function getData(map) {
+			$.ajax({
+				url: 'https://cors.io/?http://data.jeju.go.kr/rest/besteating/getEatingList?authApiKey=V%2BXyeaErdAAZAf2dSPlKPWTvwIjmHbInOd70m0wxy1C5v0g4RTgBBnzKsmMcdY3nGQcoMdzx00lSpth0Dn%2FsUg%3D%3D',
+
+				success: function (xml) {
+					parsingData(xml, map);
+				}
+			});
+		};
+
+		$(document).ready(function () {
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(33.450701, 126.570667),
+				level: 8
+			};
+
+			var map = new kakao.maps.Map(container, options);
+
+			getData(map);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="map"></div>
+</body>
+
+</html>

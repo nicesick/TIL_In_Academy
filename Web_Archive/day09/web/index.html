@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TIL</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+	* {
+		margin : 0;
+		padding : 0;
+	}
+
+	.full_width {
+		margin : 0 auto;
+		width : 100%;
+	}
+
+	.nav_width {
+		float : left;
+		width : 20%;
+	}
+
+	.menu_width {
+		float : left;
+		width : 80%;
+	}
+
+	.top_bottom_height {
+		height : 20%;
+	}
+
+	.center_height {
+		height : 60%;
+	}
+
+	.title_fonts {
+		text-align: center;
+		font-size: 4em;
+		line-height: 150px;
+	}
+
+	.logo_background {
+		background : green;
+	}
+
+	.menu_background {
+		background : lightblue;
+	}
+
+	.default_list {
+		list-style: none;
+	}
+
+	.list_decoration {
+		font-size: 35px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 100px;
+	}
+
+	.div_size {
+		width : 100%;
+		height : 100%;
+	}
+
+	.image_size {
+		width : 100%;
+		height : 70%;
+	}
+
+	table > tr > td > p {
+		text-align : center;
+		font-size: 20px;
+		font-weight: bold;
+	}
+</style>
+<script>
+	var nav = [
+		{category : 'bread'},
+		{category : 'main'},
+		{category : 'topping'},
+		{category : 'sauce'},
+		{category : 'drink'},
+		{category : 'side'},
+	];
+
+	var menu = [
+		{category : 'bread', name : '허니오트', price : '0', image : 'img/m1.jpg'},
+		{category : 'bread', name : '플렛', price : '0', image : 'img/m1.jpg'},
+		{category : 'bread', name : '화이트', price : '0', image : 'img/m1.jpg'},
+		{category : 'bread', name : '위트', price : '0', image : 'img/m1.jpg'},
+		{category : 'bread', name : '파마산오레가노', price : '0', image : 'img/m1.jpg'},
+		{category : 'main', name : '햄', price : '4700', image : 'img/m1.jpg'},
+		{category : 'main', name : '참치', price : '4800', image : 'img/m1.jpg'},
+		{category : 'main', name : '미트볼', price : '4900', image : 'img/m1.jpg'},
+		{category : 'main', name : '터키', price : '5100', image : 'img/m1.jpg'},
+		{category : 'main', name : '베지', price : '3900', image : 'img/m1.jpg'},
+		{category : 'main', name : '치킨 데리야끼', price : '5600', image : 'img/m1.jpg'},
+		{category : 'main', name : '터키 베이컨', price : '5600', image : 'img/m1.jpg'},
+		{category : 'main', name : '풀드포크', price : '5900', image : 'img/m1.jpg'},
+		{category : 'main', name : '스테이크&치즈', price : '6300', image : 'img/m1.jpg'},
+		{category : 'topping', name : '양상추', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '토마토', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '할라피뇨', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '피망', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '양파', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '올리브', price : '0', image : 'img/m1.jpg'},
+		{category : 'topping', name : '피클', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '스위트 어니언', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '스위트 칠리', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '핫 칠리', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '렌치', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '머스타드', price : '0', image : 'img/m1.jpg'},
+		{category : 'sauce', name : '마요네즈', price : '0', image : 'img/m1.jpg'},
+		{category : 'drink', name : '사이다', price : '1500', image : 'img/m1.jpg'},
+		{category : 'drink', name : '콜라', price : '1500', image : 'img/m1.jpg'},
+		{category : 'drink', name : '아이스 아메리카노', price : '2000', image : 'img/m1.jpg'},
+		{category : 'drink', name : '뜨거운 아메리카노', price : '1700', image : 'img/m1.jpg'},
+		{category : 'side', name : '초코칩 쿠키', price : '1000', image : 'img/m1.jpg'},
+		{category : 'side', name : '브로콜리 스프', price : '2900', image : 'img/m1.jpg'},
+		{category : 'side', name : '해쉬브라운', price : '1200', image : 'img/m1.jpg'}
+	];
+
+	$(document).ready(function(){
+		$(nav).each(function(idx, item){
+			$('section > nav > ul').append('<li class="list_decoration">' + item.category + '</li>');
+		});
+
+		$('nav > ul > li').click(function(){
+			var textResult = '<table><tbody>';
+			var target = $(this).text();
+			var lineIndex = 1;
+
+			$(menu).each(function(idx, item){
+				if (target == item.category) {
+					if (lineIndex % 3 == 1) {
+						textResult += '<tr>';
+					}
+
+					textResult += '<td>';
+					textResult += '<div class="div_size">' + '<p>' + '<img class="image_size" src="' + item.image + '">'  + '</p>' + '<p>' + item.name + '</p>' + '<p>' + item.price + '</p>' +'</div>';
+					textResult += '</td>';
+
+					if (lineIndex % 3 == 0) {
+						textResult += '</tr>';
+					}
+
+					lineIndex++;
+				}
+			});
+
+			textResult += '</tbody></table>';
+			$('aside').html(textResult);
+		});
+	});
+</script>
+</head>
+<body>
+	<header class="full_width top_bottom_height logo_background">
+		<h1 class="title_fonts">SUBWAY</h1>
+	</header>
+	<section class="full_width center_height">
+		<nav class="nav_width menu_background">
+			<ul class="default_list">
+			</ul>
+		</nav>
+		<aside class="menu_width menu_background">
+		</aside>
+	</section>
+	<footer class="full_width top_bottom_height logo_background"></footer>
+</body>
+</html>

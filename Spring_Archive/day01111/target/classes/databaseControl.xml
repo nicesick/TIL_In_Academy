@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userbiz" class="com.user.UserBiz"
+	p:dao-ref="useroracledao"></bean>
+	<bean id="usermariadao" class="com.user.UserMariaDao" scope="prototype" lazy-init="true"></bean>
+	<bean id="useroracledao" class="com.user.UserOracleDao" scope="prototype" lazy-init="true"></bean>
+</beans>

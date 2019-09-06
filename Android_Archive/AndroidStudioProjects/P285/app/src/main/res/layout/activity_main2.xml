@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30sp"
+    tools:context=".Main2Activity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100sp"
+        android:text="메인메뉴"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/toCustomerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50sp"
+        android:text="고객관리"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/toSalesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50sp"
+        android:text="매출관리"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/toProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품관리"
+        android:textSize="30sp" />
+</LinearLayout>

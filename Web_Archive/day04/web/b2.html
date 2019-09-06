@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	* {
+		margin : 0;
+		padding : 0;
+	}
+	
+	a {
+		text-decoration: none;
+		color : black;
+	}
+	
+	ul, ol {
+		list-style: none;
+	}
+	
+	header {
+		width : 800px;
+		height : 300px;
+		background : red;	
+	}
+	
+	section {
+		width : 800px;
+		height : 500px;
+		background : gray;
+	}
+	
+	footer {
+		width : 800px;
+		height : 100px;
+		background : blue;
+	}
+	
+	header, section, footer {
+		margin :0 auto;
+	}
+	
+	#left_aside {
+		float : left;
+		width: 150px;
+		height: 500px;
+		background : green;
+	}
+	
+	#center_aside {
+		float : left;
+		width : 500px;
+		height: 500px;
+		background : yellow;
+	}
+	
+	#right_aside {
+		float : left;
+		width : 150px;
+		height: 500px;
+		background : white;
+	}
+	
+	.login_info {
+		height : 150px;
+	}
+	
+	.login_info > li {
+		display : inline;
+		font-size: 10px;
+		margin : 10px;
+		float : right;
+	}
+	
+	#page_name {
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+		margin-bottom : 40px;
+	}
+	
+	.nav > li {
+		display : inline;
+		font-size: 20px;
+		margin-left : 100px;
+	}
+	
+	.login_info > li:hover , #page_name:hover , .nav > li:hover {
+		color : white;
+	}
+	
+	img {
+		width : 100%;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<ul class="login_info">
+			<li>MAP</li>
+			<li>ABOUT US</li>
+			<li>REGISTER</li>
+			<li>LOG IN</li>
+		</ul>
+		
+		<div id="page_name">
+			W2C School
+		</div>
+		
+		<ul class="nav">
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>AJAX</li>
+			<li>JQuery</li>
+		</ul>
+	</header>
+	<section>
+		<aside id="left_aside">
+			<ul>
+				<li>
+					<a href="">CLICK</a>
+				</li>
+				<li>
+					<a href="">CLICK</a>
+				</li>
+			</ul>
+		</aside>
+		<aside id="center_aside">
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<img src="img/img1.jpg">
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+							<p>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+						</td>
+					
+					</tr>
+				</tbody>
+			</table>
+		</aside>
+		<aside id="right_aside">
+		</aside>
+	</section>
+	<footer></footer>
+</body>
+</html>

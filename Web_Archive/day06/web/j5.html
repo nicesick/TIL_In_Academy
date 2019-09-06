@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+</style>
+</head>
+<body>
+	<form>
+		<p id="id">
+			ID<input type="text" name="id">
+		</p>
+		<p id="pwd">
+			PWD<input type="password" name="pwd">
+		</p>
+		<p id="pwdck">
+			PWDCK<input type="password" name="pwdck">
+		</p>
+		<p>
+			HINT
+			<select name="hint">
+				<option value="no_choose">
+					선택해 주세요-----
+				</option>
+				<option value="papa_name">
+					아버지 성함은?
+				</option>
+				<option value="mama_name">
+					어머니 성함은?
+				</option>
+				<option value="bro_name">
+					형의 이름은?
+				</option>
+				<option value="my_name">
+					너의 이름은?
+				</option>
+			</select>
+		</p>
+		<p>
+			HOBBY
+			TRAIN <input type="radio" name="hobby" value="train">
+			STUDY <input type="radio" name="hobby" value="study">
+			MUSIC <input type="radio" name="hobby" value="music">
+		</p>
+		<p id="age">
+			AGE <input type="number" name="age">
+		</p>
+		
+		<input onclick="register(this.form);" type="button" value="SUBMIT">
+	</form>
+</body>
+
+<script>
+	var idOrigin = document.getElementById('id').innerHTML;
+	var pwdOrigin = document.getElementById('pwd').innerHTML;
+	var pwdckOrigin = document.getElementById('pwdck').innerHTML;
+	var ageOrigin = document.getElementById('age').innerHTML;
+
+	function register(f) {
+		var id = f.id;
+		var pwd = f.pwd;
+		var pwdck = f.pwdck;
+		
+		if (id.value == '' || id.value == null) {
+			var getId = document.getElementById('id');
+			getId.innerHTML = idOrigin + 'ID is Mandatory';
+			getId.focus();
+			
+			return;
+		}
+		
+		else {
+			var getId = document.getElementById('id');
+			getId.innerHTML = idOrigin;
+		}
+		
+		if (pwd.value == '' || pwd.value == null) {
+			var getPwd = document.getElementById('pwd');
+			getPwd.innerHTML = pwdOrigin + 'PWD is Mandatory';
+			getPwd.focus();
+			
+			return;
+		}
+		
+		else if (pwd.value.length < 4) {
+			var getPwd = document.getElementById('pwd');
+			getPwd.innerHTML = pwdOrigin + 'PWD length have to over 4';
+			getPwd.focus();
+			
+			return;
+		}
+		
+		else {
+			var getPwd = document.getElementById('pwd');
+			getPwd.innerHTML = pwdOrigin;
+		}
+
+		if (pwdck.value == '' || pwdck.value == null || pwdck.value != pwd.value) {
+			var getPwdck = document.getElementById('pwdck');
+			getPwdck.innerHTML = pwdckOrigin + 'PWDCK have to match with PWD';
+			getPwdck.focus();
+			
+			return;
+		}
+		
+		else {
+			var getPwdck = document.getElementById('pwdck');
+			getPwdck.innerHTML = pwdckOrigin;
+		}
+		
+		var c = confirm('Are you Login ?');
+		
+		if (c) {
+			f.submit();	
+		}
+	}
+</script>
+</html>

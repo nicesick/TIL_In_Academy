@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+	var cnum = parseInt(Math.random() * 100 + 1);
+	var nGuess = 0;
+	
+	function tryGuess(f) {
+		var guess = f.guess.value;
+		var hint = f.hint;
+		
+		if (guess == '' || guess == null) {
+			return;
+		}
+		
+		if (guess > cnum) {
+			hint.value = '낮습니다';
+		}
+		
+		else if (guess < cnum) {
+			hint.value = '높습니다';
+		}
+		
+		else {
+			hint.value = '성공입니다';
+		}
+		
+		var guessCount = f.nGuess;
+		guessCount.value = ++nGuess;
+	};
+</script>
+</head>
+<body>
+	<form>
+		<p>
+			GUESS <input type="text" name="guess">
+			<input onclick="tryGuess(this.form);" type="button" value="TRY">
+		</p>
+		<p>
+			<span id="NGUESS">
+				NGUESS <input type="text" name="nGuess" readonly="readonly">
+			</span>
+			<span>
+				HINT <input type="text" name="hint" readonly="readonly">
+			</span>
+		</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {
+		width : 100%;
+	}
+
+	.align_center {
+		margin : auto;
+		text-align: center;
+	}
+
+	.align_left {
+		text-align : left;
+		line-height: 20px;
+	}
+
+	.margin_30px {
+		margin : 30px;
+	}
+
+	.width_20per {
+		width : 17%;
+	}
+
+	.width_100per {
+		width : 100%;
+	}
+
+	.font_10px {
+		font-size: 15px;
+	}
+
+	.menu_color_hover:hover {
+		background : yellow;
+		font-weight: bold;
+	}
+
+	.text-decoration_none {
+		text-decoration: none;
+	}
+</style>
+<script>
+	var bread_price = 0;
+	var main_price = 0;
+	var toping_price = 0;
+	var sauce_price = 0;
+	var drink_price = 0;
+	var side_price = 0;
+
+	function addMaterial(target, name, price) {
+		switch(target) {
+			case 'bread':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var bread = document.getElementById('bread_result');
+					bread.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>'
+				}
+
+				this.bread_price += price;
+
+				var bread_price = document.getElementById('bread_price_result');
+				bread_price.innerHTML = this.bread_price;
+
+				break;
+			case 'main':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var main = document.getElementById('main_result');
+					main.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>';
+				}
+				
+				this.main_price += price;
+
+				var main_price = document.getElementById('main_price_result');
+				main_price.innerHTML = this.main_price;
+
+				break;
+			case 'toping':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var toping = document.getElementById('toping_result');
+					toping.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>';
+				}
+				
+				this.toping_price += price;
+
+				var toping_price = document.getElementById('toping_price_result');
+				toping_price.innerHTML = this.toping_price;
+
+				break;
+			case 'sauce':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var sauce = document.getElementById('sauce_result');
+					sauce.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>';
+				}
+				
+				this.sauce_price += price;
+
+				var sauce_price = document.getElementById('sauce_price_result');
+				sauce_price.innerHTML = this.sauce_price;
+
+				break;
+			case 'drink':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var drink = document.getElementById('drink_result');
+					drink.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>';
+				}
+				
+				this.drink_price += price;
+
+				var drink_price = document.getElementById('drink_price_result');
+				drink_price.innerHTML = this.drink_price;
+
+				break;
+			case 'side':
+				var addPrice = document.getElementById(name);
+
+				if (addPrice != null) {
+					var oneLine = addPrice.innerHTML;
+					var nameAndPrice = oneLine.split(':');
+
+					addPrice.innerHTML = nameAndPrice[0] + ' : ' + (parseInt(nameAndPrice[1]) + parseInt(price));
+				}
+
+				else {
+					var side = document.getElementById('side_result');
+					side.innerHTML += '<p id="' + name + '" class="font_10px align_left">' + name + ' : ' + price + '</p>';
+				}
+				
+				this.side_price += price;
+
+				var side_price = document.getElementById('side_price_result');
+				side_price.innerHTML = this.side_price;
+
+				break;
+		};
+
+		var total = document.getElementById('total_result');
+		total.innerHTML = this.bread_price + this.main_price + this.toping_price + this.sauce_price + this.drink_price + this.side_price;
+	};
+
+	function showMenu(target) {
+		var bread = document.getElementById('bread_menu');
+		var main = document.getElementById('main_menu');
+		var toping = document.getElementById('toping_menu');
+		var sauce = document.getElementById('sauce_menu');
+		var drink = document.getElementById('drink_menu');
+		var side = document.getElementById('side_menu');
+
+		switch(target) {
+			case 'bread':
+				bread.style.visibility = 'visible';
+				main.style.visibility = 'hidden';
+				toping.style.visibility = 'hidden';
+				sauce.style.visibility = 'hidden';
+				drink.style.visibility = 'hidden';
+				side.style.visibility = 'hidden';
+				break;
+			case 'main':
+				bread.style.visibility = 'hidden';
+				main.style.visibility = 'visible';
+				toping.style.visibility = 'hidden';
+				sauce.style.visibility = 'hidden';
+				drink.style.visibility = 'hidden';
+				side.style.visibility = 'hidden';
+				break;
+			case 'toping':
+				bread.style.visibility = 'hidden';
+				main.style.visibility = 'hidden';
+				toping.style.visibility = 'visible';
+				sauce.style.visibility = 'hidden';
+				drink.style.visibility = 'hidden';
+				side.style.visibility = 'hidden';
+				break;
+			case 'sauce':
+				bread.style.visibility = 'hidden';
+				main.style.visibility = 'hidden';
+				toping.style.visibility = 'hidden';
+				sauce.style.visibility = 'visible';
+				drink.style.visibility = 'hidden';
+				side.style.visibility = 'hidden';
+				break;
+			case 'drink':
+				bread.style.visibility = 'hidden';
+				main.style.visibility = 'hidden';
+				toping.style.visibility = 'hidden';
+				sauce.style.visibility = 'hidden';
+				drink.style.visibility = 'visible';
+				side.style.visibility = 'hidden';
+				break;
+			case 'side':
+				bread.style.visibility = 'hidden';
+				main.style.visibility = 'hidden';
+				toping.style.visibility = 'hidden';
+				sauce.style.visibility = 'hidden';
+				drink.style.visibility = 'hidden';
+				side.style.visibility = 'visible';
+				break;
+		};
+	};
+</script>
+</head>
+<body>
+	<h1 class="align_center margin_30px">WELCOME TO SUBWAY</h1>
+	<table class="align_center">
+		<thead>
+			<tr>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('bread')" type="button" value="빵">
+				</th>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('main')" type="button" value="메인">
+				</th>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('toping')" type="button" value="토핑">
+				</th>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('sauce')" type="button" value="소스">
+				</th>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('drink')" type="button" value="음료">
+				</th>
+				<th class="width_20per">
+					<input class="width_100per" onclick="showMenu('side')" type="button" value="사이드">
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="width_20per">
+					<div id="bread_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('bread','허니오트',5000)">허니오트</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('bread','플렛',5000)">플렛</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('bread','화이트',5000)">화이트</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('bread','위트',5000)">위트</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('bread','파마산오레가노',5000)">파마산오레가노</p>
+					</div>
+				</td>
+				<td class="width_20per">
+					<div id="main_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','쉬림프',5800)">쉬림프</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','폴드포크',5600)">풀드포크</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','참치',7000)">참치</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','로스트 치킨',6200)">로스트 치킨</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','써브웨이 클럽',5900)">써브웨이 클럽</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('main','스테이크 & 치즈',7000)">스테이크 & 치즈</p>
+					</div>
+				</td>
+				<td class="width_20per">
+					<div id="toping_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','양상추',3000)">양상추</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','토마토',3000)">토마토</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','할라피뇨',2800)">할라피뇨</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','피망',3000)">피망</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','양파',2800)">양파</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','올리브',3500)">올리브</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('toping','피클',3000)">피클</p>
+					</div>
+				</td>
+				<td class="width_20per">
+					<div id="sauce_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','스위트 어니언',1000)">스위트 어니언</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','스위트 칠리',1000)">스위트 칠리</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','핫 칠리',1000)">핫 칠리</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','렌치',1000)">렌치</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','머스타드',1000)">머스타드</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('sauce','마요네즈',1000)">마요네즈</p>
+					</div>
+				</td>
+				<td class="width_20per">
+					<div id="drink_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('drink','사이다',1500)">사이다</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('drink','콜라',1500)">콜라</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('drink','아이스 아메리카노',2000)">아이스 아메리카노</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('drink','뜨거운 아메리카노',1500)">뜨거운 아메리카노</p>
+					</div>
+				</td>
+				<td class="width_20per">
+					<div id="side_menu">
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('side','웨지 감자',2000)">웨지 감자</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('side','브로콜리 스프',3400)">브로콜리 스프</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('side','초코칩 쿠키',1800)">초코칩 쿠키</p>
+						<p class="font_10px align_left menu_color_hover" onclick="addMaterial('side','해시 브라운',3000)">해시 브라운</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="width_20per">
+					<div id="bread_result"></div>
+					<div id="bread_price_result"></div>
+				</td>
+				<td>
+					<div id="main_result"></div>
+					<div id="main_price_result"></div>
+				</td>
+				<td>
+					<div id="toping_result"></div>
+					<div id="toping_price_result"></div>
+				</td>
+				<td>
+					<div id="sauce_result"></div>
+					<div id="sauce_price_result"></div>
+				</td>
+				<td>
+					<div id="drink_result"></div>
+					<div id="drink_price_result"></div>
+				</td>
+				<td>
+					<div id="side_result"></div>
+					<div id="side_price_result"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="align_center" colspan="6">
+					<div id="total_result"></div>
+				</td>
+			</tr>
+			<tr>
+				<td id="cancel" colspan="3"><a class="text-decoration_none" href="index.html">CANCEL</a></td>
+				<td id="pay" colspan="3"><a class="text-decoration_none" href="payResult.html">PAY</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

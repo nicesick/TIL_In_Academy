@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hi</title>
+<style></style>
+<script>
+	var person = [ 
+		{
+			id : 'id01',
+			name : '이말숙'
+		},
+		{
+			id : 'id02',
+			name : '김말숙'
+		},
+		{
+			id : 'id03',
+			name : '정말숙'
+		},
+		{
+			id : 'id04',
+			name : '황말숙'
+		},
+		{
+			id : 'id05',
+			name : '오말숙'
+		}
+	];
+
+	function getData() {
+		var data = document.getElementById('data');
+		var result = '';
+
+		result += '<table border="2">';
+		result += '<tbody>';
+		for (var i = 0 ; i < person.length; i++) {
+			result += '<tr>';
+			result += '<td>';
+			result += '<h1>' + person[i].id + '</h1>';
+			result += '</td>';
+			result += '<td>';
+			result += person[i].name;
+			result += '</td>';
+			result += '</tr>';
+		};
+		result += '</tbody>';
+		result += '</table>';
+
+		data.innerHTML = result;
+	};
+</script>
+</head>
+<body>
+	<h1 onclick="getData();">FOR TEST</h1>
+	<div id="data"></div>
+</body>
+</html>

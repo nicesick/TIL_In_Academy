@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+	table, tr {
+		width : 100%;
+	}
+
+	td {
+		width : 50%;
+	}
+
+	input {
+		width : 100%;
+	}
+
+	span {
+		float : right;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$('input[value="LOGIN"]').click(function(){
+			$('#login_control').attr({
+				'action' : 'login',
+				'method' : 'post',
+				'data' : {
+					'id' : $('input[name="id"]').val(),
+					'pwd' : $('input[name="pwd"]').val()
+				},
+			});
+
+			$('#login_control').submit();
+		});
+
+		$('input[name="id"]').keyup(function(){
+			var target = $(this).val();
+
+			$.ajax({
+				url : 'login',
+				method : 'get',
+				data : {
+					'target' : target
+				},
+
+				success : function(result) {
+					var resultScript = eval(result);
+					var resultText = '';
+
+					$(resultScript).each(function(idx, item){
+						resultText += '<p>' + item.id + '</p>';
+					});
+
+					$('span').html(resultText);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>JiHun's Page - LOGIN</h1>
+
+	<form id="login_control">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						<input type="text" name="id">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						PWD
+					</td>
+					<td>
+						<input type="password" name="pwd">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="LOGIN">
+					</td>
+					<td>
+						<a href="register.html"><input type="button" value="REGISTER"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

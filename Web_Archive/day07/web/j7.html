@@ -1,0 +1,183 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<style>
+		table {
+			margin : auto;
+			padding : 10px;
+			width : 100%;
+			height : 100%;
+			border : 5px solid black;
+		}
+
+		#board {
+			text-align: right;
+		}
+
+		table > tbody > tr > td  > input {
+			width : 100%;
+			height : 100%;
+		}
+	</style>
+	<script>
+		var firstNum = '';
+		var secondNum = '';
+		var operator = '';
+		var boardNum = '';
+
+		function addOperator(oper) {
+			if (firstNum != '' && operator != '' && secondNum != '') {
+				equal();
+			}
+
+			if(firstNum != '' && operator == '') {
+				operator = oper;
+				boardNum = firstNum + operator;
+
+				var board = document.getElementById('board');
+				board.value = boardNum;
+			}
+		}
+
+		function add(num) {
+			if (operator == '') {
+				firstNum += String(num);
+			}
+
+			else {
+				secondNum += String(num);
+			}
+
+			boardNum = firstNum + operator + secondNum;
+
+			var board = document.getElementById('board');
+			board.value = boardNum;
+		};
+
+		function zero() {
+			if (operator == '') {
+				if (firstNum != '') {
+					firstNum += String(0);
+				}
+			}
+
+			else {
+				if (secondNum != '') {
+					secondNum += String(0);
+				}
+			}
+
+			boardNum = firstNum + operator + secondNum;
+
+			var board = document.getElementById('board');
+			board.value = boardNum;
+		};
+
+		function equal() {
+			if (firstNum != '' && operator != '' && secondNum != '') {
+				switch(operator) {
+					case '+':
+						boardNum = parseInt(firstNum) + parseInt(secondNum);
+						break;
+					case '-':
+						boardNum = parseInt(firstNum) - parseInt(secondNum);
+						break;
+					case '*':
+						boardNum = parseInt(firstNum) * parseInt(secondNum);
+						break;
+					case '/':
+						boardNum = parseInt(firstNum) / parseInt(secondNum);
+						break;
+				}
+
+				firstNum = String(boardNum);
+				operator = '';
+				secondNum = '';
+
+				var board = document.getElementById('board');
+				board.value = boardNum;
+			}
+		};
+
+		function clearBoard() {
+			firstNum = '';
+			secondNum = '';
+			operator = '';
+			boardNum = '';
+
+			var board = document.getElementById('board');
+			board.value = boardNum;
+		};
+	</script>
+</head>
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td colspan="4">
+					<input id="board" type="text" readonly="readonly" value="0">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<input onclick="clearBoard()" id="clear" type="button" value="C">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input onclick="addOperator('+')" id="plus" type="button" value="+">
+				</td>
+				<td>
+					<input onclick="addOperator('-')" id="minus" type="button" value="-">
+				</td>
+				<td>
+					<input onclick="addOperator('*')" id="multiply" type="button" value="*">
+				</td>
+				<td>
+					<input onclick="addOperator('/')" id="divide" type="button" value="/">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input onclick="add(1)" id="1" type="button" value="1">
+				</td>
+				<td>
+					<input onclick="add(2)" id="2" type="button" value="2">
+				</td>
+				<td>
+					<input onclick="add(3)" id="3" type="button" value="3">
+				</td>
+				<td>
+					<input onclick="zero()" id="0" type="button" value="0">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input onclick="add(4)" id="4" type="button" value="4">
+				</td>
+				<td>
+					<input onclick="add(5)" id="5" type="button" value="5">
+				</td>
+				<td>
+					<input onclick="add(6)" id="6" type="button" value="6">
+				</td>
+				<td rowspan="2">
+					<input onclick="equal();" id="equal" type="button" value="=">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input onclick="add(7)" id="7" type="button" value="7">
+				</td>
+				<td>
+					<input onclick="add(8)" id="8" type="button" value="8">
+				</td>
+				<td>
+					<input onclick="add(9)" id="9" type="button" value="9">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

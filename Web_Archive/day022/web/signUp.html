@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	table {
+		padding : 10px;
+		width : 100%;
+	}
+	
+	input, select {
+		width : 95%;
+	}
+	
+	img {
+		width : 95%;
+	}
+</style>
+
+<title>호두, 아몬드, 율무차</title>
+</head>
+<body>
+	<h1>회원가입</h1>
+
+	<form action="index.html" method="GET">
+		<table>
+			<thead>
+				<tr>
+					<th colSpan="2"><img src="img/img001.jpg"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<label for="id">ID</label>
+					</td>
+					<td>
+						<input id="id" type="text" name="id" required="required">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="pwd">PWD</label>
+					</td>
+					<td>
+						<input id="pwd" type="password" name="pwd" required="required">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						호두, 아몬드, 율무차를 좋아하십니까?
+					</td>
+					<td>
+						<select name="result">
+							<option value="yes">예</option>
+							<option value="yes">예</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html">
+							<input type="button" name="cancel" value="CANCEL">
+						</a>
+					</td>
+					<td>
+						<input type="submit" name="ok" value="OK">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

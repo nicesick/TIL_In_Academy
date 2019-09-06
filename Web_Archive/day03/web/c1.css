@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#header {
+	color: pink;
+	background: blue;
+}
+
+.tags {
+	color: yellow;
+	background: black;
+}
+
+h1 {
+	color: red;
+	background: black;
+}

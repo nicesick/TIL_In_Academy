@@ -1,0 +1,40 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+
+	<script>
+		window.onload = function(){
+			var h1 = document.getElementById('h1');
+			var h2 = document.getElementById('h2');
+			var h3 = document.getElementById('h3');
+
+			var s1 = setInterval(function(){
+				h1.innerHTML += '*';
+			}, 200);
+
+			var s2 = setInterval(function(){
+				h2.innerHTML += '*';
+			}, 500);
+
+			var s3 = setInterval(function(){
+				h3.innerHTML += '*';
+			}, 400);
+
+			setTimeout(function(){
+				clearInterval(s1);
+				clearInterval(s2);
+				clearInterval(s3);
+			}, 5000);
+		};
+	</script>
+</head>
+
+<body>
+	<h1 id="h1"></h1>
+	<h1 id="h2"></h1>
+	<h1 id="h3"></h1>
+</body>
+
+</html>

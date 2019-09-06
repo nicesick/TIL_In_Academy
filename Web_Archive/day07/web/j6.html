@@ -1,0 +1,21 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+
+	<script>
+		setInterval(function() {
+			var date = new Date();
+			var time = document.getElementById('time');
+
+			time.innerHTML = date.toLocaleString();
+		}, 1000);
+	</script>
+</head>
+
+<body>
+	<h1 id="time"></h1>
+</body>
+
+</html>

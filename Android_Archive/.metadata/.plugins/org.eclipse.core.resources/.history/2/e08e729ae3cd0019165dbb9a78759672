@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+</script>
+</head>
+<body>
+	<h1>WebView Test</h1>
+	<h2 id="id02">Sample Data</h2>
+</body>
+</html>

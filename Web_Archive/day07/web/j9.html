@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+
+	<script>
+		function getResult() {
+			var drink = document.getElementsByName('drink');
+			var pay = document.getElementById('pay');
+			
+			var drinkResult = '';
+
+			for (var i = 0 ; i < drink.length ; i++) {
+				if (drink[i].checked) {
+					drinkResult += drink[i].value + ' ';
+				}
+			}
+
+			var payResult = pay.options[pay.selectedIndex].value;
+
+			var drinkBoard = document.getElementById('drinkResult');
+			var payBoard = document.getElementById('payResult');
+
+			drinkBoard.value = drinkResult;
+			payBoard.value = payResult;
+		};
+	</script>
+</head>
+
+<body>
+	<div>
+		포카리 <input type="checkbox" name="drink" value="fokari">
+		게토레이 <input type="checkbox" name="drink" value="getorai">
+		2프로 <input type="checkbox" name="drink" value="ipro">
+	</div>
+
+	<div>
+		지불방법 
+		<select id ="pay" name="pay">
+			<option value="card">카드</option>
+			<option value="cash">현금</option>
+		</select>
+	</div>
+	<div>
+		<input type="button" value="선택" onclick="getResult()">
+	</div>
+	<div>
+		<input id="drinkResult" type="text" readonly="readonly">
+	</div>
+	<div>
+		<input id="payResult" type="text" readonly="readonly">
+	</div>
+</body>
+
+</html>

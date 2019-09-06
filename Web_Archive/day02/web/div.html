@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	div {
+		background: white;
+		width:300px;
+		height:50px;
+	}
+</style>
+
+<script>
+	function login(f) {
+		var c = confirm('Are you Login ...');
+		
+		if (c == true) {
+			f.method = 'GET';
+			f.action = 'a';
+			f.submit();
+		}
+	};
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div><span>DIV</span></div>
+	<p>뭐가 다른겨</p>
+	
+	<form>
+		ID <input type="text" name="nm">
+		PWD <input type="password" name="pwd">
+		<input onclick="login(this.form);"type="button" value="LOGIN">
+		<input type="submit" value="LOGIN">
+	</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+	$(document).ready(function(){
+		var txt = $('h1').text();
+		alert(txt);
+
+		$('h1').text('-----');
+		$('#hh').html('<a href="">CLICK</a>');
+
+		$('input[type="text"]').css('background','gray');
+		$('input[name="pwd"]').css('text-align','center');
+	});
+</script>
+</head>
+<body>
+	<h1>HEADER1</h1>
+	<h1 id="hh">HEADER1</h1>
+	<h1>HEADER1</h1>
+	<h1 class="ch">HEADER1</h1>
+	<input type="text" name="id"><br>
+	<input type="password" name="pwd"><br>
+</body>
+</html>

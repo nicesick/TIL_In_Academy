@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<context:component-scan base-package="com.*"></context:component-scan>
+
+	<bean id="userdao" class="com.user.UserDao"></bean>
+	<bean id="productdao" class="com.product.ProductDao"></bean>
+
+	<tx:annotation-driven
+		transaction-manager="txManager" />
+
+	<!-- 1. Database Setting -->
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
+
+		<property value="oracle.jdbc.driver.OracleDriver"
+			name="driverClassName" />
+
+		<property value="jdbc:oracle:thin:@70.12.114.54:1521:xe"
+			name="url" />
+
+		<property value="db" name="username" />
+		<property value="db" name="password" />
+	</bean>
+
+	<!-- 2. Transaction Setting -->
+
+	<bean
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		id="txManager">
+
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 3. MyBatis Setting -->
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="sqlSessionFactory">
+
+		<property name="dataSource" ref="dataSource" />
+		<property value="classpath:com/mybatis/mybatis.xml"
+			name="configLocation" />
+	</bean>
+
+	<!-- 4. Spring Mybatis Connect -->
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate"
+		id="sqlSessionTemplate">
+
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 5. Mapper Setting -->
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property value="com.mapper" name="basePackage" />
+	</bean>
+</beans>

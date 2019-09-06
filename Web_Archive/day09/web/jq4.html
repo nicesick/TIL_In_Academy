@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+	$(document).ready(function(){
+		$('table, h1').css({
+			'border' : '1px solid black',
+			'margin' : 'auto',
+			'text-align' : 'center',
+			'margin-bottom' : '10px',
+			'width' : '100%'
+		});
+
+		$('tr:nth-child(2n + 1)').css({
+			'background' : 'red'
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>TABLE</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+					NAME
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					id01
+				</td>
+				<td>
+					JAMES
+				</td>
+			</tr>
+			<tr>
+				<td>
+					id01
+				</td>
+				<td>
+					JAMES
+				</td>
+			</tr>
+			<tr>
+				<td>
+					id01
+				</td>
+				<td>
+					JAMES
+				</td>
+			</tr>
+			<tr>
+				<td>
+					id01
+				</td>
+				<td>
+					JAMES
+				</td>
+			</tr>
+			<tr>
+				<td>
+					id01
+				</td>
+				<td>
+					JAMES
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

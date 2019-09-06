@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	#out {
+		border : 1px solid black;
+		width : 200px;
+		height : 200px;
+		overflow : auto;
+	}
+	#d1, #d2, #d3 {
+		width : 100px;
+		height : 100px;
+		opacity : 0.9;
+	}
+	
+	#d1 {
+		background : red;
+		z-index : 100;
+	}
+	
+	#d2 {
+		background : green;
+		z-index : 1;
+	}
+	
+	#d3 {
+		background : blue;
+		z-index : 0;
+	}
+</style>
+</head>
+<body>
+	<div id="out">
+		<div id="d1">DIV1</div>
+		<div id="d2">DIV2</div>
+		<div id="d3">DIV3</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+	div {
+		width : 600px;
+		border : 3px solid red;
+	}
+
+	img {
+		width : 100%;
+		display : block;
+	}
+</style>
+<script>
+	function getData() {
+		for(var i = 0 ; i < 10 ; i++) {
+			$('div').append('<img src="img/sp.jpg">');
+		};
+	};
+
+	$(document).ready(function(){
+		getData();
+
+		$(window).scroll(function(){
+			var scrollTop = $(window).scrollTop();
+			var docH = $(document).height();
+			var winH = $(window).height();
+
+			console.log(scrollTop);
+			console.log(docH);
+			console.log(winH);
+
+			if (docH <= winH + scrollTop + 50) {
+				getData();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

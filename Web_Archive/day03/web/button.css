@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+.b1 {
+	text-decoration : none;
+	
+	border : 5px solid black;
+	border-radius : 100px;
+	background : blue;
+	color : white;
+	
+	padding : 0 30px;
+	font-family: 'Indie Flower', cursive;
+	font-size: 30px;
+	box-shadow: 20px 10px 5px #666666;
+}
+
+.b1:hover {
+	color : red;
+	border-color : red;
+	
+}

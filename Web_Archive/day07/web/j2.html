@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+
+	<script>
+		var g = 200;
+
+		function a(c,d) {
+			alert(c+d);
+		};
+
+		var b = function() {
+			var g = 100;
+			return this.g;
+		};
+
+		var num = b();
+		alert(num);
+	</script>
+</head>
+<body>
+	<button onclick="a('A','B');">CLICK</button>
+</body>
+</html>

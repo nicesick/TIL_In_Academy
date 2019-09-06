@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+	img {
+		width : 30px;
+		height : 30px;
+	}
+</style>
+<script>
+	/*
+		rank :
+		keyword :
+		type :
+		cnt :
+	*/
+
+	function display(result) {
+		$('div').empty();
+
+		$(result).each(function(idx, item){
+			$('div').append('<p>' + item.rank + ' : ' + item.keyword + ' : ' + '<img src="img/' + item.type + '.png">' + ' : ' + item.cnt + '</p>');
+		});
+	};
+
+	function getData() {
+		$.ajax({
+			url : 'chart',
+
+			success : function(result){
+				display(eval(result));
+			}
+		});
+	};
+
+	$(document).ready(function(){
+		setInterval(getData,3000);
+	});
+</script>
+</head>
+<body>
+	<h1>Keyword Chart</h1>
+	<div></div>
+</body>
+</html>

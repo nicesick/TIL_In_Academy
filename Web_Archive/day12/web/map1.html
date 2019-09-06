@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?"></script>
+
+<style>
+	#map {
+		width : 500px;
+		height : 500px;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			var center = google.maps.LatLng();
+		});
+
+		var center = new google.maps.LatLng(36.798802, 127.160165);
+
+		var map = new google.maps.Map(
+			document.querySelector('#map') , {
+			mapTypeId : google.maps.MapTypeId.ROADMAP,
+			zoom : 17,
+			center : center
+		});
+		
+		// var watch = window.navigator.geolocation.watchPosition(
+		// 	success,
+		// 	error,
+		// 	{
+		// 		enableHighAccuracy : true,
+		// 		timeout : 10000,
+		// 		maximumAge : 0
+		// 	}
+		// );
+
+		// function success(position) {
+		// 	var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		// 	map.setCenter(center);
+		// };
+
+		// function error() {
+		// 	alert("error");
+		// };
+	});
+</script>
+</head>
+<body>
+	<button>이탈리아</button>
+	<div id="map"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function s(data) {
+		var id = document.getElementById("id02");
+		id.innerHTML = 'Web View Event'+data;
+	}
+</script>
+</head>
+<body>
+	<h1>WebView Test</h1>
+	<h2 id="id02">Sample Data</h2>
+	<button onclick="windows.js.webclick('something')">CLICK</button>
+</body>
+</html>

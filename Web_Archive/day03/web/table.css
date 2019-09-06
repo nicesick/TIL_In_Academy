@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.t1 {
+	margin : auto;
+	width : 500px;
+	border:2px solid black;
+	border-collapse: collapse;
+}
+
+.t1 > thead > tr > th {
+	background : black;
+	color : pink;
+}
+
+.t1 > tbody > tr:nth-child(2n) {
+	background : lightblue;
+}
+
+.t1 > tbody > tr:nth-child(2n + 1) {
+	background : lightgray;
+}
+
+.t1 > tbody > tr > td:nth-child(4n + 1) {
+	text-align: center;
+}
+
+.t1 > tbody > tr > td:nth-child(4n + 2) {
+	text-align: left;
+}
+
+.t1 > tbody > tr > td:nth-child(4n + 3) {
+	text-align: center;
+}
+
+.t1 > tbody > tr > td:nth-child(4n) {
+	text-align: right;
+}
+
+.t1 > tbody > tr:hover {
+	background : red;
+	color : white;
+}
