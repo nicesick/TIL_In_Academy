@@ -32,7 +32,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 ## Git
 
-- [190521](#190521)
+- [190521](/190521)
   - Git
   - Markdown editor : Typora
 - 190522
