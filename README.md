@@ -2,7 +2,7 @@
 
 
 
-## I. Introduction
+## Introduction
 
 This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
@@ -10,7 +10,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 **Contents**
 
-​	Git(#git)
+[Git]: (#git)
 
 ​	Java
 
@@ -30,7 +30,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 
 
-## #Git
+## Git
 
 
 
