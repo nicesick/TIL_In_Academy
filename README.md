@@ -18,7 +18,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 ​	[Web Programming](#web)
 
-​	Spring Framework
+​	[Spring Framework](#spring)
 
 ​	Linux
 
@@ -192,3 +192,90 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - Drag And Drop
     - Geolocation
   - KakaoMapAPI
+  
+  
+
+### Servlet
+
+- [190627](/190627)
+  - Servlet
+  - Response Method
+    - PrintWriter
+    - JSP
+  - JSP Library
+    - JSTL
+      - if
+      - choose, when, otherwise
+      - foreach
+  - Servlet Dispatcher
+    - ask?type=''
+
+- [190628](/190628)
+  - Component Models
+  - JSP & JQuery
+  - Double Request : 'sendRedirect' function
+  - Servlet Library
+    - COS : the library for uploading the files
+    - MultipartRequest
+  - Hidden : How to send additional datas
+
+- [190701](/190701)
+  - Dispatcher
+    - web.xml : servlet-mapping
+  - partial page change
+    - jsp:include
+- [190702](/190702)
+  - HttpSession
+  - SimpleWebProject
+    - Dispatcher
+    - Servlet
+    - Partial Page
+      - jsp:include
+
+[to contents](/contents)
+
+
+
+## Spring
+
+- [190702](/190702)
+  - Spring Properties
+    - IoC
+    - AoP
+    - POJO
+  - Spring Installation
+  - Maven
+  - Spring Setting
+  - Spring.xml
+    - AbstractApplicationContext
+    - bean
+- [190703](/190703)
+  - xml import
+  - Annotation
+    - context
+  - Mixing : bean & Annotation
+  - AoP
+    - aop : config, pointcut, aspect
+  - JoinPoint
+  - AoP - Annotation
+- [190704](/190704)
+  - MyBatis & Oracle
+    - tx
+  - spring.xml setting for mybatis
+  - MyBatis Uses
+    - Mapper
+    - Annotation : Transactional
+  - SpringMVC
+    - web.xml Setting
+    - spring.xml Setting
+      - mvc
+      - ViewResolver
+
+- [190705](/190705)
+  - SpringMVC
+    - Argument
+    - ClassMaker
+  - Multipartfile : How to upload files
+    - spring.xml Setting
+  - File Upload : FileOutputStream
+
