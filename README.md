@@ -232,7 +232,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - Partial Page
       - jsp:include
 
-[to contents](/contents)
+[To Contents](#contents)
 
 
 
@@ -278,4 +278,3 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - Multipartfile : How to upload files
     - spring.xml Setting
   - File Upload : FileOutputStream
-
