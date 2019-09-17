@@ -10,7 +10,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 ## Contents & Spec
 
-​	1. [Git](#git)
+1. [Git](#git)
 
 2.  [Java](#java)
 
