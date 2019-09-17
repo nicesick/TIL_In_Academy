@@ -8,19 +8,51 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 
 
-## Contents
+## Contents & Spec
 
-​	[Git](#git)
+​	1. [Git](#git)
 
-​	[Java](#java)
+2.  [Java](#java)
 
-​	[SQL](#sql)
+- JDK 1.8
 
-​	[Web Programming](#web)
+3. [SQL](#sql)
 
-​	[Spring Framework](#spring)
+- Oracle : 11g Express Edition
 
-​	Linux
+4. [Web Programming](#web)
+
+- JQuery : /1.12.4/jquery.min.js
+- JSON : json-simple-1.1.1.jar
+- JSTL
+  - jstl
+  - standard
+  - cos
+
+5. [Spring Framework](#spring)
+
+- Oracle : oracle6_g
+
+- Maven
+  - Spring : 4.2.5.RELEASE
+  - aspectj : 1.6.5
+  - log4j : 1.2.15
+
+  
+
+  - mybatis : 3.2.3
+  - mybatis-spring : 1.2.2
+
+6. [Mini Team Project](../MultiCampus_Web_MiniProject_Team_3)
+
+7.  [Linux](#linux)
+
+- CentOS : centos7
+- Oracle : oracle-xe-11.2.0-1.0.x86_64.rpm
+- Maria :
+  - MariaDB-client
+  - MariaDB-server
+  - MariaDB-common
 
 ​	Hadoop
 
@@ -278,3 +310,99 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - Multipartfile : How to upload files
     - spring.xml Setting
   - File Upload : FileOutputStream
+
+[To Contents](#contents)
+
+
+
+## Linux
+
+- [190718](/190718)
+  - VMware Player
+  - How to install CentOS
+- [190719](/190719)
+  - Linux Setting
+    - Remove Update (Stay this version) : yum repo setting
+    - Network : Static Network Address Setting
+    - Host : IP & host mapping
+
+- [190722](/190722)
+
+  - Linux Commands :Basic
+  - Vim Editor
+  - Mount
+  - Administrator
+    - User Command
+    - Group Command
+    - Skel & .bashrc
+
+- [190723](/190723)
+
+  - How to install Programs
+  - Hard & Symbolic Link
+  - Linux Command
+    - find
+    - whichis
+    - where
+  - program installation
+    - Java : jdk1.8
+    - Apache Tomcat
+    - rpm & yum
+  - Compression Or DeCompression
+    - tar
+    - xz , gzip ...
+  - How to firewall config
+
+- [190724](/190724)
+
+  - Marco
+    - Cron
+    - At
+  - How to install OracleDB
+
+- [190725](/190725)
+
+  - Creating WorkSpace Using GUI
+  - How to start server : WAR
+  - How to install MariaDB
+
+- [190726](/190726)
+
+  - HDD System
+    - IDE > SATA
+    - SCSI > SA-SCSI
+
+  - HDD control Command
+    - fdisk
+    - fstab
+
+- [190729](/190729)
+
+  - RAID : if the situation the HDD is lost
+    - Linear RAID
+    - RAID0
+    - RAID1
+    - RAID5
+    - RAID6
+  - RAID Command
+    - mdadm
+    - mkfs
+
+- [190730](/190730)
+
+  - LVM
+    - pvcreate
+    - vgcreate
+    - lvcreate
+  - Installating CentOS with RAID1
+
+- [190731](/190731) & [190801](/190801)
+
+  - Shell Programming
+    - variables
+    - argument
+    - programming with bash commands
+    - if - else
+    - case
+    - for & while
+    - function
