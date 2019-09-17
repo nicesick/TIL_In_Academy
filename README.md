@@ -8,7 +8,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 
 
-## Contents & Spec
+## Contents
 
 1. [Git](#git)
 
@@ -43,7 +43,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - mybatis : 3.2.3
   - mybatis-spring : 1.2.2
 
-6. [Mini Team Project](../MultiCampus_Web_MiniProject_Team_3)
+6. [Mini Team Project](https://github.com/nicesick/MultiCampus_Web_MiniProject_Team_3)
 
 7.  [Linux](#linux)
 
