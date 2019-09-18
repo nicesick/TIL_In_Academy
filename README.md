@@ -48,8 +48,10 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 7.  [Linux](#linux)
 
 - CentOS : centos7
+- Tomcat : apache-tomcat-9.0.22.tar.gz
+- Eclipse : eclipse-jee-oxygen-3a-linux-gtk-x86_64.tar.gz
 - Oracle : oracle-xe-11.2.0-1.0.x86_64.rpm
-- Maria :
+- Maria : MariaDB-10.0.15-centos7_0-x86_64*.rpm
   - MariaDB-client
   - MariaDB-server
   - MariaDB-common
