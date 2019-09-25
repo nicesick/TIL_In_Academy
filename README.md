@@ -67,9 +67,9 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 ​	8. [Hadoop](#hadoop)
 
-​	9. [R](#r)
+	9. [R](#r)
+ 	10. [Android](#android)
 
-	10. [Android](#android)
  	11. Network
 
 
