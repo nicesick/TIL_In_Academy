@@ -60,17 +60,16 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 - Maria : MariaDB-10.0.15-centos7_0-x86_64*.rpm
   
   - MariaDB-client
-  
   - MariaDB-server
-  
   - MariaDB-common
 
-​	8. [Hadoop](#hadoop)
+8. [Hadoop](#hadoop)
 
-	9. [R](#r)
- 	10. [Android](#android)
+9. [R](#r)
 
- 	11. Network
+10. [Android](#android)
+
+11. Network
 
 
 
