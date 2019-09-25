@@ -58,15 +58,19 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 - Oracle : oracle-xe-11.2.0-1.0.x86_64.rpm
 
 - Maria : MariaDB-10.0.15-centos7_0-x86_64*.rpm
+  
   - MariaDB-client
+  
   - MariaDB-server
+  
   - MariaDB-common
 
-​	Hadoop
+​	8. [Hadoop](#hadoop)
 
-​	R
+​	9. [R](#r)
 
-​	Android
+	10. [Android](#android)
+ 	11. Network
 
 
 
@@ -414,3 +418,70 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - case
     - for & while
     - function
+
+- [190802](/190802)
+  - ROOT : How to start '/' in Tomcat Server
+    - Windows
+    - Linux
+  - Log4j
+  - Redirect : 404 Error Page
+
+[To Contents](#contents)
+
+
+
+## Hadoop
+
+- [190805](/190805)
+  - Introduction : Big Data
+    - Before Big Data...
+    - Hadoop
+  - Installation for Hadoop in Linux
+    - Type
+      - Single
+      - Virtual Distribution
+      - Fully Distribution
+  - Virtual Distribution
+    - Settings
+
+- [190806](/190806)
+  - Hadoop Fully Distribution
+    - Settings
+- [190807](/190807)
+  - File Systems
+    - Before Hadoop
+      - DAS
+      - NAS
+      - SAN
+    - Hadoop : HDFS + Map Reduce + Distributed System
+  - Hive : Hadoop Eco System
+    - Installation MySql
+    - Settings
+    - Uses
+
+- [190808](/190808)
+  - Hive SQL
+    - How to Use SQL
+    - How to load Datas
+  - Java + Hive
+    - Hive Listener
+    - Librarys
+    - Code
+
+[To Contents](#contents)
+
+
+
+## R
+
+- [190813](/190813)
+- [190816](/190816)
+- [190819](/190819)
+- [190820](/190820)
+- [190821](/190821)
+
+[To Contents](#contents)
+
+
+
+## Android
