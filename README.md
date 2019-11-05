@@ -40,10 +40,8 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - aspectj : 1.6.5
   - log4j : 1.2.15
 
-  
-
   - mybatis : 3.2.3
-  - mybatis-spring : 1.2.2
+- mybatis-spring : 1.2.2
 
 6. [Mini Team Project](https://github.com/nicesick/MultiCampus_Web_MiniProject_Team_3)
 
@@ -72,11 +70,20 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 10. [Android](#android)
 
-- Android Studio 
+- Android Studio
 
-11. Network
+11. [Network](#network)
 
-12. [AWS](#aws)
+12. [CAN](#can)
+
+- Driver : RealSYS_USB_Device_Driver(20170316)
+- CAN : CANPro_v1.4
+
+13. [CAN Communication Mini Project](https://github.com/nicesick/SimpleCanComm)
+
+14. [ConnectedCarControlSystem Final Project](https://github.com/nicesick/GongJo)
+
+15. [AWS](#aws)
 
 
 
@@ -226,13 +233,14 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 ### HighChart
 
 - [190625](/190625)
+  
   - HighChart Uses
   - Data Type
     - JSON
     - XML
       - How to parse xml : find function
-  - OpenAPI
-
+- OpenAPI
+  
 - [190626](/190626)
   - CROSS-CHECK PROBLEM
   - HTML5 New Functions
@@ -544,15 +552,15 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - OnConfigurationChanged
   
   - How to save datas
-  - Bundle
-      - OnSaveInstanceState
-  - SharedPreferences
+      - Bundle
+          - OnSaveInstanceState
+      - SharedPreferences
   - Custom View
     - Toast
     - Dialog
     - ProgressBar
     - progressDialog
-  
+
 - [190829](/190829)
 
   - Android Contents
@@ -600,6 +608,151 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
       - permission
       - receiver
 
+- [190902](/190902)
+  - Broadcast Receiver
+    - IntentFilter
+    - BroadcastReceiver
+    - registerReceiver
+  - listView
+    - BaseAdapter
+    - setAdapter
+    - addItem
+  - listViewEvent
+    - OnItemClick
+  - Spinner
+
+- [190903](/190903)
+  - WebView
+    - android > web
+    - web > android
+  - seekBar
+  - Thread
+    - Handler
+      - obtainMessage
+      - sendMessage
+    - runOnUiThread
+    - handler.post
+    - handler.postDelayed
+
+- [190904](/190904)
+  - AsyncTask
+    - onPreExecute
+    - onProgressUpdate
+    - onPostExecute
+    - doInBackground
+    - executeOnExecutor
+  - Network
+    - URLConnection
+    - InputStream
+    - StringBuilder
+  - JSON
+    - JSONArray
+    - JSONObject
+
+- [190910](/190910)
+  - SQLite
+    - SQLiteOpenHelper
+    - SQLiteDatabase
+    - execSQL
+    - rawQuery
+    - Cursor
+  - Content Provider
+    - setAction
+    - startActivityForResult
+    - OnActivityResult
+    - Uri
+    - ContentResolver
+
+- [190911](/190911)
+  - MediaPlayer
+  - VideoView
+  - YoutubeAPI
+  - Location
+    - LocationManager
+    - getSystemService
+      - LOCATION_SERVICE
+    - LocationListener
+    - requestLocationUpdates
+  - Map
+    - SupportMapFragment
+    - GoogleMap
+
+- [190916](/190916)
+  - Vibrator
+  - Ringtone
+
+[To Contents](#contents)
+
+
+
+## Network
+
+- [190917](/190917)
+  - Thread
+  - ThreadGroup
+
+- [190918](/190918)
+  - ThreadContol
+    - sleep
+    - interrupt
+      - InterruptedException
+  - ThreadInfo
+    - Thread.currentThread
+  - Banned (can't use anymore) > use flag
+    - suspend
+    - resume
+    - stop
+  - synchronized
+    - wait
+    - notify
+
+- [190919](/190919)
+  - PipedReader, PipedWriter
+  - InputStream
+    - BufferedInputStream
+    - InputStreamReader
+    - FileInputStream
+    - DataInputStream
+    - ObjectInputStream
+  - OutputStream
+    - BufferedOutputStream
+    - OutputStreamWriter
+    - FileOutputStream
+    - DataOutputStream
+    - ObjectOutputStream
+      - Serializable
+      - transient
+
+- [190923](/190923)
+  - Socket
+    - Server
+      - ServerSocket (+ port)
+      - Socket
+      - OutputStream
+      - DataOutputStream
+    - Client
+      - Socket (+ ip, port)
+      - InputStream
+      - DataInputStream
+  - Map<ip, socket>
+    - Collection
+      - keys
+      - values
+
+[To Contents](#contents)
+
+
+
+## CAN
+
+- [190926](/190926)
+  - How to install CAN
+  - JAVA + CAN
+    - RXTXcomm.jar
+    - rxtxParallel.dll
+    - rxtxSerial.dll
+  - CAN Protocol
+
 [To Contents](#contents)
 
 
@@ -628,3 +781,5 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
       - 로드 밸런서 생성
         - 로드 밸런서 보안 그룹 선택
         - 로드 밸런서 라우팅 구성
+
+[To Contents](#contents)
