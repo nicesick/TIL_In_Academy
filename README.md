@@ -41,7 +41,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - log4j : 1.2.15
 
   - mybatis : 3.2.3
-- mybatis-spring : 1.2.2
+  - mybatis-spring : 1.2.2
 
 6. [Mini Team Project](https://github.com/nicesick/MultiCampus_Web_MiniProject_Team_3)
 
@@ -239,7 +239,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - JSON
     - XML
       - How to parse xml : find function
-- OpenAPI
+  - OpenAPI
   
 - [190626](/190626)
   - CROSS-CHECK PROBLEM
@@ -523,7 +523,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - AndroidManifest
   - Build
     - Generate Signed Bundle : Distributed Apk
-    - Build Bundle : Debug apk
+    - Build Bundle : Debug Apk
   - Logcat
   - LifeCycle
     - OnCreate
@@ -598,7 +598,7 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
         - FLAG_ACTIVITY_SINGLE_TOP
         - FLAG_ACTIVITY_CLEAR_TOP
       - startAcvitity
-    - Binder : How to connect the service with activity
+    - Binder : How to connect the service in activity
       - ServiceConnection
       - IBinder
       - bindService
