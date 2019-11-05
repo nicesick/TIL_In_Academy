@@ -535,28 +535,24 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
     - TextView
     - EditText
 
-  
-
   - EventListener
-    - OnClickListener
+  - OnClickListener
     - OnCheckedChangeListener
     - OnTouchListener
       - GestureDetector
     - OnKeyDown
     - OnConfigurationChanged
-
   
-
   - How to save datas
-    - Bundle
+  - Bundle
       - OnSaveInstanceState
-    - SharedPreferences
+  - SharedPreferences
   - Custom View
     - Toast
     - Dialog
     - ProgressBar
     - progressDialog
-
+  
 - [190829](/190829)
 
   - Android Contents
@@ -584,10 +580,8 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - CalendarView
   - TimePicker
 
-  
-
   - Service
-    - startService
+  - startService
     - onStartCommand > Runnable > Thread.start
     - How to send the data to activity
       - onNewIntent
@@ -601,12 +595,10 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
       - IBinder
       - bindService
   
-
-  
-- Broadcast Receiver
-    - AndroidManifest Setting
+  - Broadcast Receiver
+      - AndroidManifest Setting
       - permission
-      - receiver
+        - receiver
 
 [To Contents](#contents)
 
