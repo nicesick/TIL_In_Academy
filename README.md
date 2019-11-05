@@ -64,9 +64,18 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - MariaDB-common
 
 8. [Hadoop](#hadoop)
+
+- Hadoop : hadoop-1.2.1.tar.gz
+- hive : hive-1.0.1.tar.gz
+
 9. [R](#r)
+
 10. [Android](#android)
+
+- Android Studio 
+
 11. Network
+
 12. [AWS](#aws)
 
 
@@ -482,6 +491,125 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 
 ## Android
+
+- [190826](/190826)
+  - Why we make Native App?
+    - Security
+    - Push Notification
+  - Android Studio Installation
+
+- [190827](/190827)
+  - AVD Manager : How to make Virtual Phone
+  - How to make New Project
+    - minSdkVersion
+    - targetSdkVersion
+    - dependencies : External Libraries
+  - Basic Structure
+    - Java
+      - MainActivity
+    - Res
+      - layout
+      - mipmap
+      - values
+      - drawable
+    - AndroidManifest
+  - Build
+    - Generate Signed Bundle : Distributed Apk
+    - Build Bundle : Debug apk
+  - Logcat
+  - LifeCycle
+    - OnCreate
+    - OnResume
+    - OnPause
+    - OnDestroy
+  - Widget
+    - Layout
+    - View
+    - ViewGroup
+    - How to get Widget
+
+- [190828](/190828)
+
+  - Button
+  - Text
+    - TextView
+    - EditText
+
+  
+
+  - EventListener
+    - OnClickListener
+    - OnCheckedChangeListener
+    - OnTouchListener
+      - GestureDetector
+    - OnKeyDown
+    - OnConfigurationChanged
+
+  
+
+  - How to save datas
+    - Bundle
+      - OnSaveInstanceState
+    - SharedPreferences
+  - Custom View
+    - Toast
+    - Dialog
+    - ProgressBar
+    - progressDialog
+
+- [190829](/190829)
+
+  - Android Contents
+    - Activity
+    - Service
+    - BroadCast Receiver
+    - Content Provider
+  - How to move Activitys
+    - Intent
+    - startActivityForResult
+    - OnActivityResult
+    - setResult
+  - How to execute External App
+  - Fragment
+    - getSupportFragmentManager
+    - beginTransaction
+    - replace
+    - commit
+
+- [190830](/190830)
+
+  - MenuBar
+    - OnCreateOptionsMenu
+    - OnOptionsItemSelected
+  - CalendarView
+  - TimePicker
+
+  
+
+  - Service
+    - execute like Thread
+    - startService
+    - onStartCommand > Runnable > Thread.start
+    - How to send the data to activity
+      - onNewIntent
+      - Flag Setting
+        - FLAG_ACTIVITY_NEW_TASK
+        - FLAG_ACTIVITY_SINGLE_TOP
+        - FLAG_ACTIVITY_CLEAR_TOP
+      - startAcvitity
+    - Binder : How to connect the service with activity
+      - ServiceConnection
+      - IBinder
+      - bindService
+
+  
+
+  - Broadcast Receiver
+    - AndroidManifest Setting
+      - permission
+      - receiver
+
+[To Contents](#contents)
 
 
 
