@@ -64,12 +64,10 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   - MariaDB-common
 
 8. [Hadoop](#hadoop)
-
 9. [R](#r)
-
 10. [Android](#android)
-
 11. Network
+12. [AWS](#aws)
 
 
 
@@ -484,3 +482,30 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 
 
 ## Android
+
+
+
+## AWS
+
+- [191105](/191105)
+  - IAM
+    - 유저생성
+    - 그룹생성
+    - 그룹-유저 추가
+  - MFA
+    - MFA 활성화
+    - Authy
+  - 실습
+    - VPC
+      - VPC생성
+      - Subnet 생성
+      - Gateway 생성
+      - 라우팅 테이블 생성
+      - 보안 그룹 생성
+      - 인바운드, 아웃바운드 규칙 생성
+    - EC2
+      - 인스턴스 생성
+      - 인스턴스 이미지 생성
+      - 로드 밸런서 생성
+        - 로드 밸런서 보안 그룹 선택
+        - 로드 밸런서 라우팅 구성
