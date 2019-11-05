@@ -587,7 +587,6 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
   
 
   - Service
-    - execute like Thread
     - startService
     - onStartCommand > Runnable > Thread.start
     - How to send the data to activity
@@ -601,10 +600,10 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
       - ServiceConnection
       - IBinder
       - bindService
-
   
 
-  - Broadcast Receiver
+  
+- Broadcast Receiver
     - AndroidManifest Setting
       - permission
       - receiver
