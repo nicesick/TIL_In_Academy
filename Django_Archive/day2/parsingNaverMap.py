@@ -19,7 +19,8 @@ def parse_naver_address_data_for_latLng(targetAddress, data):
     }
 
 def parse_naver_map_route_latlng(data):
-    route_latlng = []
+    route_latlng = {}
+    index = 0
 
     for route in data["routes"]:
         step_latlng = []
@@ -29,36 +30,35 @@ def parse_naver_map_route_latlng(data):
                 if step["path"] != "":
                     step_latlng.append(step["path"])
 
-        route_latlng.append(step_latlng)
+        route_latlng[index] = step_latlng
+        index += 1
 
     return route_latlng
 
-startAddress = "홍대입구역"
-endAddress = "멀티캠퍼스"
+def address_system():
+    startAddress = "홍대입구역"
+    endAddress = "멀티캠퍼스"
 
-url = 'https://m.map.naver.com/apis/search/poi?query='
+    url = 'https://m.map.naver.com/apis/search/poi?query='
 
-start_point_info = request_data_from_url(url + startAddress)
-start_point_latlng = parse_naver_address_data_for_latLng(startAddress, start_point_info)
+    start_point_info = request_data_from_url(url + startAddress)
+    start_point_latlng = parse_naver_address_data_for_latLng(startAddress, start_point_info)
 
-end_point_info = request_data_from_url(url + endAddress)
-end_point_latlng = parse_naver_address_data_for_latLng(endAddress, end_point_info)
+    end_point_info = request_data_from_url(url + endAddress)
+    end_point_latlng = parse_naver_address_data_for_latLng(endAddress, end_point_info)
 
-start_point_latlng["name"] = start_point_latlng["name"].replace(' ', '+')
-end_point_latlng["name"] = end_point_latlng["name"].replace(' ', '+')
+    start_point_latlng["name"] = start_point_latlng["name"].replace(' ', '+')
+    end_point_latlng["name"] = end_point_latlng["name"].replace(' ', '+')
 
-print(start_point_latlng)
-print(end_point_latlng)
+    print(start_point_latlng)
+    print(end_point_latlng)
 
-url = 'https://m.map.naver.com/spirra/findCarRoute.nhn?route=route3&output=json&result=web3&coord_type=latlng&search=2&car=0&mileage=12.4&start=' + start_point_latlng["lat"] + "%2C" + start_point_latlng["lng"] + "%2C" + start_point_latlng["name"] + "&destination=" + end_point_latlng["lat"] + "%2C" + end_point_latlng["lng"] + "%2C" + end_point_latlng["name"]
+    url = 'https://m.map.naver.com/spirra/findCarRoute.nhn?route=route3&output=json&result=web3&coord_type=latlng&search=2&car=0&mileage=12.4&start=' + start_point_latlng["lat"] + "%2C" + start_point_latlng["lng"] + "%2C" + start_point_latlng["name"] + "&destination=" + end_point_latlng["lat"] + "%2C" + end_point_latlng["lng"] + "%2C" + end_point_latlng["name"]
 
-route_point_info = request_data_from_url(url)
+    route_point_info = request_data_from_url(url)
+    print(route_point_info)
 
-print(route_point_info)
+    route_latlngs = parse_naver_map_route_latlng(route_point_info)
+    print(route_latlngs)
 
-route_latlngs = parse_naver_map_route_latlng(route_point_info)
-
-print(route_latlngs)
-
-
-
+    return route_latlngs
