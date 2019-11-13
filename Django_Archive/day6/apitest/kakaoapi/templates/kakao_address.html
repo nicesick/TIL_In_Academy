@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KAKAO ADDRESS</title>
+</head>
+<body>
+    <form action="result">
+        <input type="text" name="keyword">
+        <input type="submit" value="키워드 검색">
+
+        {% for position in positions %}
+            <h5><label>{{ position.address_name }}<input type="radio" name="position" value="x={{ position.x }}&y={{ position.y }}"></label></h5>
+        {% endfor %}
+    </form>
+</body>
+</html>
