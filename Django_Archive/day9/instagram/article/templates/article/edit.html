@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="card col-12">
+            <form action="{% url 'edit' article.id %}" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                <div class="card-body" style="min-height : 8rem;">
+                    <textarea class="form-control" rows="5" name="contents">{{ article.contents }}</textarea>
+                </div>
+                <div class="card-footer text-right">
+                    <input type="submit" class="btn btn-success" value="수정하기">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
