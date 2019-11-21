@@ -80,10 +80,10 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
 - CAN : CANPro_v1.4
 
 13. [CAN Communication Mini Project](https://github.com/nicesick/SimpleCanComm)
-
 14. [ConnectedCarControlSystem Final Project](https://github.com/nicesick/GongJo)
-
 15. [AWS](#aws)
+
+16. [Bixby](#bixby)
 
 
 
@@ -783,3 +783,45 @@ This Repository is for what I learn in academy (2019.05.10 ~ 2019.12.13)
         - 로드 밸런서 라우팅 구성
 
 [To Contents](#contents)
+
+
+
+## Bixby
+
+- [191121](/191121)
+  - Project Structure in Bixby Developer Studio
+    - Model
+      - How to make Model
+      - capsule.bxb
+    - Action
+      - How to make Action
+      - code
+    - Target
+      - ko-KR : training
+    - End-Point
+      - endpoints.bxb
+    - View
+      - SearchResult.view.bxb
+  - Bixby Github
+  - Bixby New Functions
+    - Templates
+      - Facts Templates
+      - Search Templates
+  - Bixby Data Getting Methods
+    - Crawling
+    - Open API Request
+    - RestDB.io
+  - Bixby Debugs
+    - How to start Debug Mode
+    - Plan Graph
+    - console.log
+    - How to make Story for Testing
+      - export story
+      - assertion
+      - re-training
+    - on-device test
+      - Private Submission
+      - get Revision ID
+      - Developers' options
+      - insert Revision ID
+      - run Test
