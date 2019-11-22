@@ -60,7 +60,7 @@
 
 
 
-## VI. attribute
+## IV. attribute
 
 - 속성값 부여
 
@@ -159,4 +159,185 @@
     </script>
 </html>
 ```
+
+
+
+## VII. Form Control
+
+```html
+<form>
+    <div class="mb-5">
+        <div>
+            <input type="text" class="form-control" id='articleForm'>
+            <input type="button" class="btn btn-primary" id="submitArticle" value="글쓰기">
+        </div>
+        <div>
+            <input type="text" class="form-control" id='commentForm'>
+            <input type="button" class="btn btn-primary" id="submitComment" value="댓글쓰기">
+        </div>
+    </div>
+</form>
+
+<script>
+    var btn = document.getElementById('submitComment');
+
+    btn.addEventListener('click', function(){
+        var commentForm = document.getElementById('commentForm');
+        console.log(commentForm.value);
+    });
+</script>
+```
+
+- BackTip
+
+```html
+var appendingTag = `<li class="list-group-item"> 
+    네번째 댓글 입니다.
+    <button class="btn btn-info float-right">수정</button>
+</li>`;
+
+<!--  `` 이것을 사용하면 멀티라인으로 구성이 가능하다. -->
+
+position.appendChild(appendingTag);
+
+<!--  이거 태그 형식이 아닌 스트링 형식이기 때문에 받을 수 없다!! -->
+<!--  이것을 쓰기 위해서는 태그 형식으로 만들어 줘야하ㅐ -->
+
+position.innerHTML += appendingTag;
+
+<!--  이거 됨 -->
+```
+
+- 새로운 태그 생성
+
+```html
+<script>
+    var btn = document.getElementById('submitComment');
+
+    btn.addEventListener('click', function(){
+        var commentForm = document.getElementById('commentForm');
+
+        if (commentForm.value == '') {
+            alert('안돼안돼');
+            return;
+        }
+
+        var position = document.querySelector('.list-group');
+
+        var appendingTag = `<li class="list-group-item">` +
+            commentForm.value +
+            `<button class="btn btn-info float-right">수정</button>
+    </li>`;
+
+        var newTagLi = document.createElement('li');
+        newTagLi.classList.add('list-group-item');
+        newTagLi.innerText = commentForm.value;
+
+        var newTagSpan = document.createElement('span');
+        newTagSpan.classList.add('float-right');
+        newTagSpan.innerHTML = `<button class="btn btn-info float-right">수정</button>`;
+
+        newTagLi.appendChild(newTagSpan);
+        position.appendChild(newTagLi);
+
+        commentForm.value = '';
+    });
+</script>
+```
+
+## VIII. JQuery
+
+- 로드 되었는지를 확인
+
+```html
+<script>
+    $(document).ready(function(){
+
+    });
+
+    $(function(){
+
+    });
+    // 둘 다 똑같은 의미다!!
+</script>
+```
+
+- 자동으로 여러개가 나와도 for 문을 돌려준다.
+
+```html
+<script>
+    $(document).ready(function(){
+        $('.delete-comment').on('click', function(){
+            alert('삭제에');
+        });
+    });
+</script>
+```
+
+- 만약 버튼을 눌렀을 때 해당 글을 지우고 싶다면?
+  - 일단 attr 로 attribute을 가지고 와야 한다.
+
+```html
+<script>
+    $(document).ready(function(){
+        $('.delete-comment').on('click', function(){
+            console.dir($(this));
+
+            var commentContent = $(this).attr('value');
+            console.log(commentContent);
+        });
+        
+        // 그러면 id 를 가지고 와서 없애줄 것인가?
+        // 아니다!!
+        // 부모 정보 또한 가지고 올 수 있다!!
+        
+        $(this).parent().hide();
+        
+        // 이렇게 하거나
+        
+        $(this).parents('.list-group-item').hide();
+        
+        // 저렇게 하거나
+    });
+</script>
+```
+
+- 새로운 글 쓸때는?
+
+```html
+<script>
+    $(document).ready(function(){
+        $('#submitComment').on('click', function(){
+            var position = $('ul.list-group');
+            var input = $('#commentForm').val();
+
+            var element = ` <li class="list-group-item">
+${ input }
+<button class="btn btn-warning float-right delete-comment">삭제</button>
+<button class="btn btn-info float-right">수정</button>
+    </li>`;
+// 이거바!! ${input} 으로 값을 넣어줬어!!
+            position.prepend(element);
+        });
+
+        $('.delete-comment').on('click', function(){
+            $(this).parents('.list-group-item').hide();
+        });
+    });
+</script>
+```
+
+- 그런데.. 새로 등록된 글은 이벤트가 등록이 되어있지 않다??
+- 그러면?
+
+```javascript
+$(document).on('click', '.delete-comment', function(){
+	$(this).parents('.list-group-item').hide();
+});
+
+// 이렇게 추가된 부분도 다시 찾을 수 있도록
+// document 부터 추적하도록 하자!!
+```
+
+
 

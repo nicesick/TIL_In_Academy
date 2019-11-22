@@ -20,5 +20,6 @@ from script import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('script/', views.index)
+    path('script/', views.index),
+    path('script/jq', views.jq)
 ]

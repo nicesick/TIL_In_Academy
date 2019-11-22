@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SCRIPT TEST</title>
+    <title>JQUERY TEST</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <form>
         <div class="mb-5">
-            <div>
-                <input type="text" class="form-control" id='articleForm'>
-                <input type="button" class="btn btn-primary" id="submitArticle" value="글쓰기">
-            </div>
             <div>
                 <input type="text" class="form-control" id='commentForm'>
                 <input type="button" class="btn btn-primary" id="submitComment" value="댓글쓰기">
@@ -25,23 +21,28 @@
     <div class="commentList">
         <ul class="list-group">
             <li class="list-group-item">
-                첫번째 댓글 입니다. 
+                첫번째 댓글 입니다.
+                <button class="btn btn-warning float-right delete-comment">삭제</button>
                 <button class="btn btn-info float-right">수정</button>
             </li>
-            <li class="list-group-item"> 
+            <li class="list-group-item">
                 두번째 댓글 입니다.
+                <button class="btn btn-warning float-right delete-comment">삭제</button>
                 <button class="btn btn-info float-right">수정</button>
             </li>
-            <li class="list-group-item"> 
+            <li class="list-group-item">
                 세번째 댓글 입니다.
+                <button class="btn btn-warning float-right delete-comment">삭제</button>
                 <button class="btn btn-info float-right">수정</button>
             </li>
-            <li class="list-group-item"> 
+            <li class="list-group-item">
                 네번째 댓글 입니다.
+                <button class="btn btn-warning float-right delete-comment">삭제</button>
                 <button class="btn btn-info float-right">수정</button>
             </li>
             <li class="list-group-item">
                 다섯번째 댓글 입니다.
+                <button class="btn btn-warning float-right delete-comment">삭제</button>
                 <button class="btn btn-info float-right">수정</button>
             </li>
         </ul>
@@ -53,36 +54,23 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
-    console.dir($);
-    var btn = document.getElementById('submitComment');
+    $(document).ready(function(){
+        $('#submitComment').on('click', function(){
+            var position = $('ul.list-group');
+            var input = $('#commentForm').val();
 
-    btn.addEventListener('click', function(){
-        var commentForm = document.getElementById('commentForm');
-
-        if (commentForm.value == '') {
-            alert('안돼안돼');
-            return;
-        }
-
-        var position = document.querySelector('.list-group');
-
-        var appendingTag = `<li class="list-group-item">` +
-                                commentForm.value +
-                                `<button class="btn btn-info float-right">수정</button>
+            var element = ` <li class="list-group-item">
+                                ${ input }
+                                <button class="btn btn-warning float-right delete-comment">삭제</button>
+                                <button class="btn btn-info float-right">수정</button>
                             </li>`;
-    
-        var newTagLi = document.createElement('li');
-        newTagLi.classList.add('list-group-item');
-        newTagLi.innerText = commentForm.value;
 
-        var newTagSpan = document.createElement('span');
-        newTagSpan.classList.add('float-right');
-        newTagSpan.innerHTML = `<button class="btn btn-info float-right">수정</button>`;
+            position.prepend(element);
+        });
 
-        newTagLi.appendChild(newTagSpan);
-        position.appendChild(newTagLi);
-
-        commentForm.value = '';
+        $(document).on('click', '.delete-comment', function(){
+            $(this).parents('.list-group-item').hide();
+        });
     });
 </script>
 </html>
