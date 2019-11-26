@@ -1,0 +1,12 @@
+<li class="list-group-item" id="{{ board.id }}">
+        <div class="col-12">
+                <p class="item-contents">{{ board.contents }}</p>
+                
+                <div class="text-right">
+                    <input type="button" class="btn btn-primary edit-comment" value="수정" data-id="{{ board.id }}">
+                    <input type="button" class="btn btn-warning delete-comment" value="삭제" data-id="{{ board.id }}">
+                </div>
+
+                <p class="item-created-at text-right">{{ board.created_at }}</p>
+        </div>
+    </li>

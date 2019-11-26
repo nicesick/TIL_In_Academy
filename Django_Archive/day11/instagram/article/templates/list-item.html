@@ -1,0 +1,10 @@
+<li class="list-group-item" id='{{ comment.id }}'>
+    <i class="fas fa-comment-dots mr-2"></i>
+    <span class="item-contents">{{ comment.contents }}</span>
+
+    <span class="float-right">
+        <span class="item-updated-at">{{ comment.updated_at }}</span>
+        <button class="btn btn-warning edit-comment" data-article_id="{{ article.id }}" data-comment_id="{{ comment.id }}"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-danger delete-comment" data-article_id="{{ article.id }}" data-comment_id="{{ comment.id }}"><i class="fas fa-trash-alt"></i></button>
+    </span>
+</li>
