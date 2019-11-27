@@ -8,7 +8,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_comments(self):
-        return Comment.objects.filter(article_id=self.id)
+        return Comment.objects.filter(article_id=self.id).order_by('created_at').reverse()
 
     def edit_comment(self, comment_id, contents):
         comment = Comment.objects.get(id=comment_id)

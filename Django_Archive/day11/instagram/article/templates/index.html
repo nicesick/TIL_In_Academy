@@ -120,6 +120,10 @@
                     success : function(data){
                         $('#' + article_id + ' .comments').prepend(data);
                         $('#' + article_id + ' .form-control').val('');
+                    },
+
+                    error : function(data) {
+                        console.log(data);
                     }
                 });
             }
