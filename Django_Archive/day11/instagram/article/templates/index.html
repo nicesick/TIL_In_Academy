@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="card col-12">
+            <form action="{% url 'articles' %}" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                <div class="card-body" style="min-height : 8rem;">
+                    <textarea class="form-control" rows="5" name="contents"></textarea>
+                </div>
+                <div class="card-footer text-right">
+                    <input type="submit" class="btn btn-success" value="작성하기">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {% for article in articles %}
+    <div class="row mt-4">
+        <div class="card col-12" id="{{ article.id }}">
+            <img src="" class="card-img-top">
+            <div class="card-body" style="min-height : 8rem;">
+                <p class="card-text">
+                    {{ article.contents }}
+                </p>
+                <p class="card-text text-right">
+                    {{ article.updated_at }}
+                </p>
+                <p class="card-text float-right">
+                    <span>
+                        <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </span>
+                </p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="text" class="form-control" name="contents" placeholder="댓글을 입력해 주세요">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="submit-comment btn btn-primary" value="댓글쓰기" data-article_id="{{ article.id }}">
+                        </div>
+                    </div>
+                </li>
+
+                <div class="comments">
+                    {% for comment in article.get_comments %}
+                        <li class="list-group-item" id='{{ comment.id }}'>
+                            <i class="fas fa-comment-dots mr-2"></i>
+                            <span class="item-contents">{{ comment.contents }}</span>
+
+                            <span class="float-right">
+                                <span class="item-updated-at">{{ comment.updated_at }}</span>
+                                <button class="btn btn-warning edit-comment" data-article_id="{{ article.id }}" data-comment_id="{{ comment.id }}"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger delete-comment" data-article_id="{{ article.id }}" data-comment_id="{{ comment.id }}"><i class="fas fa-trash-alt"></i></button>
+                            </span>
+                        </li>
+                    {% endfor %}
+                </div>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $(document).on('click', '.submit-comment', function(event){
+            event.preventDefault();
+
+            var method = $(this).data('method');
+
+            if (method == 'edit') {
+                var article_id = $(this).data('article_id');
+                var comment_id = $(this).data('comment_id');
+                var contents = $('#' + article_id + ' .form-control').val();
+
+                $.ajax({
+                    url : "{% url 'edit_comment' %}",
+                    method : 'POST',
+                    data : {
+                        csrfmiddlewaretoken : '{{ csrf_token }}',
+                        article_id : article_id,
+                        comment_id : comment_id,
+                        comment_contents : contents
+                    },
+
+                    success : function(data){
+                        $('#' + comment_id + ' .item-contents').text(contents);
+                        $('#' + comment_id + ' .item-updated-at').text(data.comment_updated_at);
+
+                        $('#' + article_id + ' .submit-comment').removeData('comment_id');
+                        $('#' + article_id + ' .submit-comment').removeData('method');
+
+                        $('#' + article_id + ' .form-control').val('');
+                    }
+                });
+            }
+
+            else {
+                var article_id = $(this).data('article_id');
+                var contents = $('#' + article_id + ' .form-control').val();
+
+                $.ajax({
+                    url : "{% url 'comments' %}",
+                    method : 'POST',
+                    data : {
+                        csrfmiddlewaretoken : '{{ csrf_token }}',
+                        article_id : article_id,
+                        comment_contents : contents
+                    },
+
+                    success : function(data){
+                        $('#' + article_id + ' .comments').prepend(data);
+                        $('#' + article_id + ' .form-control').val('');
+                    },
+
+                    error : function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+        });
+
+        $(document).on('click', '.edit-comment', function(){
+            article_id = $(this).data('article_id');
+            comment_id = $(this).data('comment_id');
+            contents = $('#' + comment_id + ' .item-contents').text();
+
+            $('#' + article_id + ' .submit-comment').data('method', 'edit');
+            $('#' + article_id + ' .submit-comment').data('comment_id', comment_id);
+            $('#' + article_id + ' .form-control').val(contents);
+        });
+
+        $(document).on('click', '.delete-comment', function(){
+            article_id = $(this).data('article_id');
+            comment_id = $(this).data('comment_id');
+
+            $.ajax({
+                url : "{% url 'delete_comment' %}",
+                method : 'POST',
+                data : {
+                    csrfmiddlewaretoken : '{{ csrf_token }}',
+                    article_id : article_id,
+                    comment_id : comment_id
+                },
+
+                success : function(data){
+                    $('#' + comment_id).hide();
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<form id="boardForm">
+    <div class="container mt-3 text-center">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-9">
+                    <input type="text" class="form-control" id='boardInput'>
+                </div>
+                <div class="col-3">
+                    <input type="submit" class="btn btn-info" id="submitComment">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container mt-3">
+    <div class="row">
+        <ul class="list-group col-12">
+            {% for board in boards %}
+                <li class="list-group-item" id="{{ board.id }}">
+                    <div class="col-12">
+                            <p class="item-contents">{{ board.contents }}</p>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-primary edit-comment" value="수정" data-id="{{ board.id }}">
+                                <input type="button" class="btn btn-warning delete-comment" value="삭제" data-id="{{ board.id }}">
+                            </div>
+
+                            <p class="item-created-at text-right">{{ board.created_at }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(document).on('submit', '#boardForm', function(event){
+        event.preventDefault();
+        var contents = $('#boardInput').val()
+
+        if ($('#submitComment').data('method') != 'edit') {
+            $.ajax({
+                url : "{% url 'comment_ajax' %}",
+                method : 'POST',
+                data : {
+                    csrfmiddlewaretoken : '{{ csrf_token }}',
+                    contents : contents
+                },
+
+                success : function(data){
+                    $('.list-group').prepend(data)
+                }
+            });
+        }
+        
+        else {
+            var id = $('#submitComment').data('id');
+
+            $.ajax({
+                url : "{% url 'edit_comment_ajax' %}",
+                method : 'POST',
+                data : {
+                    csrfmiddlewaretoken : '{{ csrf_token }}',
+                    id : id,
+                    contents : contents
+                },
+
+                success : function(data){
+                    $('#' + id + ' .item-contents').text(contents);
+
+                    $('#submitComment').removeData('method');
+                    $('#submitComment').removeData('id');
+                }
+            });
+        }
+    });
+
+    $(document).on('click', '.edit-comment', function(){
+        var id = $(this).data('id');
+
+        var contents = $('#' + id + ' .item-contents').text();
+        $('#boardInput').val(contents);
+
+        $('#submitComment').data('method', 'edit');
+        $('#submitComment').data('id', id);
+    });
+
+    $(document).on('click', '.delete-comment', function(){
+        $.ajax({
+            url : "{% url 'delete_comment_ajax' %}",
+            method : 'POST',
+            data : {
+                csrfmiddlewaretoken : '{{ csrf_token }}',
+                id : $(this).data('id')
+            },
+
+            success : function(data){
+                $('#' + data.id).hide();
+            }
+        });
+    });
+</script>
+{% endblock %}
