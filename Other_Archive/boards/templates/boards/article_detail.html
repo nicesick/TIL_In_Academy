@@ -1,0 +1,14 @@
+{% include 'boards/base.html' %}
+
+{% block contents %}
+
+<h1>{{ article.title }}</h1>
+<h2>{{ article.email }}</h2>
+<h3>{{ article.contents }}</h3>
+
+<h4>{{ article.created_at }}</h4>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock  %}

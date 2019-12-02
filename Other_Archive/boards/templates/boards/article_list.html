@@ -1,0 +1,14 @@
+{% include 'boards/base.html' %}
+
+{% block contents %}
+    <ul>
+    {% for article in articles %}
+        <li>
+            <a href="{% url 'boards:article_detail' article.id %}">title : {{ article.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block scripts %}
+{% endblock  %}
