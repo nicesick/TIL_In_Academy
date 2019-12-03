@@ -5,7 +5,7 @@
 {% block contents %}
     <h1>NEW ARTICLE</h1>
     
-    <form method='POST'>
+    <form action="{% url 'boards:new_article' %}" method='POST'>
         {% csrf_token %}
 
         {% bootstrap_form form %}

@@ -1,4 +1,4 @@
-{% include 'boards/base.html' %}
+{% extends 'base.html' %}
 
 {% block contents %}
 
@@ -8,7 +8,7 @@
 
 <h4>{{ article.created_at }}</h4>
 
-{% endblock %}
+{% endblock contents %}
 
 {% block scripts %}
-{% endblock  %}
+{% endblock scripts %}

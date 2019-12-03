@@ -21,5 +21,7 @@ app_name = 'boards'
 
 urlpatterns = [
     path('', boards_views.article_list, name='article_list'),
-    path('<int:article_id>/', boards_views.article_detail, name='article_detail')
+    path('<int:article_id>/', boards_views.article_detail, name='article_detail'),
+    path('new/', boards_views.new_article, name='new_article'),
+    path('edit/<int:article_id>', boards_views.edit_article, name='edit_article')
 ]

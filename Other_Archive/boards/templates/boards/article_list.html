@@ -1,6 +1,8 @@
-{% include 'boards/base.html' %}
+{% extends 'base.html' %}
 
 {% block contents %}
+    <h1>ARTICLE LIST</h1>
+    
     <ul>
     {% for article in articles %}
         <li>
@@ -8,7 +10,7 @@
         </li>
     {% endfor %}
     </ul>
-{% endblock %}
+{% endblock contents %}
 
 {% block scripts %}
-{% endblock  %}
+{% endblock scripts %}
