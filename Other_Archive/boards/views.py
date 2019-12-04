@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Article, Comment
 from .forms import ArticleForm
 
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def article_list(request):
@@ -22,6 +24,7 @@ def article_detail(request, article_id):
 
     return render(request, 'boards/article_detail.html', context)
 
+@login_required
 def new_article(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
@@ -39,6 +42,7 @@ def new_article(request):
 
     return render(request, 'boards/article_form.html', context)
 
+@login_required
 def edit_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
 

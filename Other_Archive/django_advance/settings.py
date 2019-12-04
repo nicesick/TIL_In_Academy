@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'bootstrap4',
     'django_extensions',
     'boards',
@@ -118,6 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
