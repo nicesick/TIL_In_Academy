@@ -4,7 +4,7 @@ decorator==4.4.1
 Django==2.2.7
 django-extensions==2.2.5
 Faker==2.0.4
-ipython==7.10.1
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.15.1
 parso==0.5.1
